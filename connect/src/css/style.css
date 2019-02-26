@@ -49,13 +49,13 @@ body {
     margin: 0.5rem 0; }
 
 .Red {
-  background-color: Red; }
+  background-color: rgba(255, 0, 0, 0.836); }
 
 .Yellow {
-  background-color: Yellow; }
+  background-color: rgba(0, 128, 0, 0.781); }
 
 .white {
-  background-color: white; }
+  background-color: rgba(255, 254, 254, 0.342); }
 
 .header {
   display: flex;
