@@ -54,7 +54,7 @@ io.on('connection', socket => {
 });
 
 app.use('*', (req, res) => {
-  res.sendFile(`connect-four/connect/build/index.html`);
+  res.sendFile(`${__dirname}/connect/build`);
 });
 
 server.listen(PORT, err => {
