@@ -9,9 +9,9 @@ class Board extends Component {
     grid: Array(7)
       .fill('white')
       .map(row => Array(6).fill('white')),
-    players: { Cream: '', Black: '' },
+    players: { Red: '', Yellow: '' },
     player: { name: '', code: '' },
-    currentPlayer: 'Cream',
+    currentPlayer: 'Red',
     message: '',
     gameOn: false
   };
@@ -41,8 +41,8 @@ class Board extends Component {
         if (data) {
           this.setState({
             players: {
-              Cream: data.player1,
-              Black: data.player2 ? data.player2 : ''
+              Red: data.player1,
+              Yellow: data.player2 ? data.player2 : ''
             }
           });
         }
@@ -141,7 +141,7 @@ class Board extends Component {
   newGame() {
     this.setState(
       {
-        currentPlayer: 'Cream',
+        currentPlayer: 'Red',
         grid: Array(7)
           .fill('white')
           .map(row => Array(6).fill('white')),
@@ -324,7 +324,7 @@ class Board extends Component {
             {
               grid: newGrid,
               currentPlayer:
-                this.state.currentPlayer === 'Cream' ? 'Black' : 'Cream'
+                this.state.currentPlayer === 'Red' ? 'Yellow' : 'Red'
             },
             () => {
               socket.emit('state', this.state);

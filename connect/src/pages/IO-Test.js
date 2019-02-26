@@ -22,9 +22,9 @@ class Head extends Component {
         <div className="display">
           <div className="display__player-info">
             <div className="display__player">
-              Player 1<div className="display__player-color Cream" />
+              Player 1<div className="display__player-color Red" />
             </div>
-            <h2 className="display__name">{this.props.players['Cream']}</h2>
+            <h2 className="display__name">{this.props.players['Red']}</h2>
           </div>
           <div className="display__center">
             <h1 className="display__message">{this.messageHandler()}</h1>
@@ -55,10 +55,10 @@ class Head extends Component {
 
           <div className="display__player-info">
             <div className="display__player">
-              Player 2<div className="display__player-color Black" />
+              Player 2<div className="display__player-color Yellow" />
             </div>
 
-            <h2 className="display__name">{this.props.players['Black']}</h2>
+            <h2 className="display__name">{this.props.players['Yellow']}</h2>
           </div>
         </div>
       </div>
@@ -66,10 +66,10 @@ class Head extends Component {
   }
 
   messageHandler() {
-    if (!this.props.players['Cream'] || !this.props.players['Black']) {
+    if (!this.props.players['Red'] || !this.props.players['Yellow']) {
       return 'Waiting for players...';
     } else if (
-      this.props.players['Cream'] === this.props.player.name &&
+      this.props.players['Red'] === this.props.player.name &&
       !this.props.gameOn
     ) {
       return (
@@ -78,10 +78,10 @@ class Head extends Component {
         </button>
       );
     } else if (
-      this.props.players['Cream'] !== this.props.player.name &&
+      this.props.players['Red'] !== this.props.player.name &&
       !this.props.gameOn
     ) {
-      return `Waiting for ${this.props.players['Cream']}`;
+      return `Waiting for ${this.props.players['Red']}`;
     } else if (
       this.props.player.name === this.props.players[this.props.current]
     ) {
