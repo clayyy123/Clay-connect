@@ -66,7 +66,7 @@ class Board extends Component {
       function(data) {
         console.log(data);
         this.setState({
-          message: data
+          message: data.message
         });
       }.bind(this)
     );
@@ -173,7 +173,7 @@ class Board extends Component {
             gameOn: false
           },
           () => {
-            socket.emit('winner', this.state.message);
+            socket.emit('winner', this.state);
           }
         );
       }
@@ -196,7 +196,7 @@ class Board extends Component {
             gameOn: false
           },
           () => {
-            socket.emit('winner', this.state.message);
+            socket.emit('winner', this.state);
           }
         );
       }
@@ -247,7 +247,7 @@ class Board extends Component {
           gameOn: false
         },
         () => {
-          socket.emit('winner', this.state.message);
+          socket.emit('winner', this.state);
         }
       );
     }
@@ -297,7 +297,7 @@ class Board extends Component {
           gameOn: false
         },
         () => {
-          socket.emit('winner', this.state.message);
+          socket.emit('winner', this.state);
         }
       );
     }

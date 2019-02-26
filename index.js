@@ -41,16 +41,18 @@ io.on('connection', socket => {
   //update current board to both players
   socket.on('state', function(data) {
     console.log(data);
+    let code = data.player.code;
     io.in(code).emit('board', data);
   });
 
   //update current player
   socket.on('players', function(data) {
-    io.in(code).emit('info', data);
+    io.emit('info', data);
   });
 
   //receives winner
   socket.on('winner', function(data) {
+    let code = data.player.code;
     io.in(code).emit('winning player', data);
   });
 });
