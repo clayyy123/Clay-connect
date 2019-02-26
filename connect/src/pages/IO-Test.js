@@ -57,7 +57,6 @@ class Head extends Component {
             <div className="display__player">
               Player 2<div className="display__player-color Yellow" />
             </div>
-
             <h2 className="display__name">{this.props.players['Yellow']}</h2>
           </div>
         </div>
