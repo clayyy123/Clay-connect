@@ -55,7 +55,7 @@ io.on('connection', socket => {
   });
 });
 
-app.use('*', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(`${__dirname}/connect/build/index.html`);
 });
 
