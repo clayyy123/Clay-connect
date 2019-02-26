@@ -7,7 +7,7 @@ const io = require('socket.io')(server);
 let users = {};
 const PORT = process.env.PORT || 3001;
 
-app.use(express.static('build'));
+app.use(express.static(`${__dirname}/client/build`));
 
 io.on('connection', socket => {
   //new connection
