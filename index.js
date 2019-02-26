@@ -2,8 +2,8 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const app = express();
-const server = app.listen(3001);
-const io = require('socket.io').listen(server);
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
 let users = {};
 const PORT = process.env.PORT || 3001;
 

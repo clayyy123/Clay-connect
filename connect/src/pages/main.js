@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Slot from '../components/slot';
 import Head from './IO-Test';
 import io from 'socket.io-client';
-const socket = io('http://localhost:3001');
 
 class Board extends Component {
   state = {
@@ -17,6 +16,7 @@ class Board extends Component {
   };
 
   componentDidMount() {
+    const socket = io(this.getEnvironmentUrl());
     socket.on('new', function(data) {
       console.log(data);
     });
@@ -73,6 +73,7 @@ class Board extends Component {
   }
 
   socketHandler() {
+    const socket = io(this.getEnvironmentUrl());
     socket.emit('user-info', this.state.player);
   }
 
@@ -149,6 +150,7 @@ class Board extends Component {
         gameOn: true
       },
       () => {
+        const socket = io(this.getEnvironmentUrl());
         socket.emit('state', this.state);
       }
     );
@@ -173,6 +175,7 @@ class Board extends Component {
             gameOn: false
           },
           () => {
+            const socket = io(this.getEnvironmentUrl());
             socket.emit('winner', this.state.message);
           }
         );
@@ -196,6 +199,7 @@ class Board extends Component {
             gameOn: false
           },
           () => {
+            const socket = io(this.getEnvironmentUrl());
             socket.emit('winner', this.state.message);
           }
         );
@@ -247,6 +251,7 @@ class Board extends Component {
           gameOn: false
         },
         () => {
+          const socket = io(this.getEnvironmentUrl());
           socket.emit('winner', this.state.message);
         }
       );
@@ -297,6 +302,7 @@ class Board extends Component {
           gameOn: false
         },
         () => {
+          const socket = io(this.getEnvironmentUrl());
           socket.emit('winner', this.state.message);
         }
       );
@@ -327,6 +333,7 @@ class Board extends Component {
                 this.state.currentPlayer === 'Cream' ? 'Black' : 'Cream'
             },
             () => {
+              const socket = io(this.getEnvironmentUrl());
               socket.emit('state', this.state);
             }
           );
