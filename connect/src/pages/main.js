@@ -17,7 +17,6 @@ class Board extends Component {
   };
 
   componentDidMount() {
-    const socket = io(this.getEnvironmentUrl());
     socket.on('new', function(data) {
       console.log(data);
     });
