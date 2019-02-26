@@ -40,7 +40,8 @@ body {
   margin-top: 3rem; }
   .board__column {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    cursor: pointer; }
   .board__slot {
     border-radius: 50%;
     width: 5rem;
