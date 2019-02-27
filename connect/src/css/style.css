@@ -44,8 +44,8 @@ body {
     cursor: pointer; }
   .board__slot {
     border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
+    width: 4.8rem;
+    height: 4.8rem;
     margin: 0.5rem 0; }
 
 .Red {
