@@ -30,7 +30,7 @@ io.on('connection', socket => {
                 player1: users[clients[0]],
                 player2: users[clients[1]]
               };
-              console.log('emitting');
+              // console.log('emitting');
               io.in(code).emit('users', players);
             }
           });
@@ -40,7 +40,7 @@ io.on('connection', socket => {
 
   //update current board to both players
   socket.on('state', function(data) {
-    console.log(data);
+    // console.log(data);
     let code = data.player.code;
     io.in(code).emit('board', data);
   });

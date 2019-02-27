@@ -18,13 +18,13 @@ class Board extends Component {
 
   componentDidMount() {
     socket.on('new', function(data) {
-      console.log(data);
+      // console.log(data);
     });
 
     socket.on(
       'board',
       function(data) {
-        console.log(data);
+        // console.log(data);
         this.setState({
           grid: data.grid,
           currentPlayer: data.currentPlayer,
@@ -37,7 +37,7 @@ class Board extends Component {
     socket.on(
       'users',
       function(data) {
-        console.log(data);
+        // console.log(data);
         if (data) {
           this.setState({
             players: {
@@ -53,7 +53,7 @@ class Board extends Component {
       'info',
       function(data) {
         if (data) {
-          console.log(data);
+          // console.log(data);
           this.setState({
             currentPlayer: data.currentPlayer
           });
@@ -64,7 +64,7 @@ class Board extends Component {
     socket.on(
       'winning player',
       function(data) {
-        console.log(data);
+        // console.log(data);
         this.setState({
           message: data.message
         });
@@ -213,32 +213,32 @@ class Board extends Component {
     while (runLoop) {
       if (col <= -1 || row >= 6) {
         runLoop = false;
-        console.log('first');
+        // console.log('first');
       } else if (col > 6 || (grid[col][row] !== currentPlayer && direction)) {
         direction = false;
         col = colStack[0];
         row = rowStack[0];
         col = col - 1;
         row = row + 1;
-        console.log('second');
+        // console.log('second');
       } else if (grid[col][row] === currentPlayer && direction) {
         winCount++;
         rowStack.push(row);
         colStack.push(col);
         col++;
         row--;
-        console.log('third');
+        // console.log('third');
       } else if (grid[col][row] === currentPlayer && !direction) {
         winCount++;
         col--;
         row++;
-        console.log('fourth');
+        // console.log('fourth');
       } else {
         runLoop = false;
-        console.log('last');
+        // console.log('last');
       }
     }
-    console.log(winCount);
+    // console.log(winCount);
     if (winCount >= 4) {
       return this.setState(
         {
@@ -263,32 +263,32 @@ class Board extends Component {
     while (runLoop) {
       if (col <= -1 || row <= -1) {
         runLoop = false;
-        console.log('first');
+        // console.log('first');
       } else if (col > 6 || (grid[col][row] !== currentPlayer && direction)) {
         direction = false;
         col = colStack[0];
         row = rowStack[0];
         col = col - 1;
         row = row - 1;
-        console.log('second');
+        // console.log('second');
       } else if (grid[col][row] === currentPlayer && direction) {
         winCount++;
         rowStack.push(row);
         colStack.push(col);
         col++;
         row++;
-        console.log('third');
+        // console.log('third');
       } else if (grid[col][row] === currentPlayer && !direction) {
         winCount++;
         col--;
         row--;
-        console.log('fourth');
+        // console.log('fourth');
       } else {
         runLoop = false;
-        console.log('last');
+        // console.log('last');
       }
     }
-    console.log(winCount);
+    // console.log(winCount);
     if (winCount >= 4) {
       return this.setState(
         {
