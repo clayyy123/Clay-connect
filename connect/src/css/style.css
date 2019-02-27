@@ -29,11 +29,11 @@ body {
 
 .board {
   display: flex;
-  background: #2c3e50;
+  background: #0f2027;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #3498db, #2c3e50);
+  background: -webkit-linear-gradient(to top, #2c5364, #203a43, #0f2027);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #3498db, #2c3e50);
+  background: linear-gradient(to top, #2c5364, #203a43, #0f2027);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   width: 100%;
   justify-content: space-around;
@@ -49,10 +49,10 @@ body {
     margin: 0.5rem 0; }
 
 .Red {
-  background-color: rgba(255, 0, 0, 0.836); }
+  background-color: #ffa9a9; }
 
 .Yellow {
-  background-color: rgba(0, 128, 0, 0.781); }
+  background-color: #70f7d9; }
 
 .white {
   background-color: rgba(255, 254, 254, 0.342); }
