@@ -4,17 +4,9 @@ class Slot extends Component {
   state = {
     color: this.props.color,
     methods: {
-      turn: null
+      turn: this.props.turn
     }
   };
-
-  componentDidMount() {
-    this.setState({
-      methods: {
-        turn: this.props.turn
-      }
-    });
-  }
 
   render() {
     const classColor = this.props.color;
