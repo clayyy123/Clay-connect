@@ -40,7 +40,7 @@ body {
   margin-top: 3rem; }
   @media only screen and (min-width: 500px) {
     .board {
-      width: 60%; } }
+      width: 60% !important; } }
   .board__column {
     display: flex;
     flex-direction: column;
@@ -52,9 +52,9 @@ body {
     margin: 0.5rem 0; }
     @media only screen and (min-width: 500px) {
       .board__slot {
-        width: 7.8rem;
-        height: 7.8rem;
-        margin: 1rem 0.5rem; } }
+        width: 7.8rem !important;
+        height: 7.8rem !important;
+        margin: 1rem 0.5rem !important; } }
 
 .Red {
   background-color: #ffa9a9; }

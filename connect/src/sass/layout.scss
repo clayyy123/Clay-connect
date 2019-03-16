@@ -33,7 +33,7 @@
   margin-top: 3rem;
 
   @media only screen and (min-width: 500px) {
-    width: 60%;
+    width: 60% !important;
   }
 
   &__column {
@@ -49,9 +49,9 @@
     margin: 0.5rem 0;
 
     @media only screen and (min-width: 500px) {
-      width: 7.8rem;
-      height: 7.8rem;
-      margin: 1rem 0.5rem;
+      width: 7.8rem !important;
+      height: 7.8rem !important;
+      margin: 1rem 0.5rem !important;
     }
   }
 }
